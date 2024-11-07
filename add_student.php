@@ -6,16 +6,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $gender = $_POST['Gender'];
     $birth_date = $_POST['birth_date'];
 
-    // Ngay va tuoi hien tai va nam
+ 
     $current_date = new DateTime();
     $birth_date_obj = DateTime::createFromFormat('Y-m-d', $birth_date);
 
     if ($birth_date_obj) {
         $age = $current_date->diff($birth_date_obj)->y;
 
-        // Kiểm tra dữ liệu đầu vào
         if (!empty($studentID) && !empty($name) && ($gender === 'Male' || $gender === 'Female') && !empty($birth_date) && $birth_date_obj <= $current_date && $age <= 100 && $age >= 0) {
-            // Chuyển đổi định dạng ngày từ Y-m-d sang d/m/Y
+           
             $birth_date = $birth_date_obj->format('d/m/Y');
 
             if (isUniqueID($studentID)) {
