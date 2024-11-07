@@ -34,28 +34,28 @@
                 </thead>
                 <tbody>
                     <?php
-                    // Đường dẫn đến tệp CSV
+                    
                     $csvFile = 'studentlist.csv';
 
-                    // Mở tệp CSV
+                    
                     if (($handle = fopen($csvFile, "r")) !== FALSE) {
-                        // Bỏ qua dòng tiêu đề
+                        
                         fgetcsv($handle, 1000, ",");
 
                         $rows = [];
-                        // Đọc từng dòng của tệp CSV
+                       
                         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                             $rows[] = $data;
                         }
-                        // Đóng tệp CSV
+                       
                         fclose($handle);
 
-                        // Sắp xếp mảng theo studentID tăng dần
+                       
                         usort($rows, function ($a, $b) {
                             return $a[0] <=> $b[0];
                         });
 
-                        // Hiển thị các hàng đã được sắp xếp
+                       
                         foreach ($rows as $row) {
                             echo "<tr>";
                             echo "<td>" . htmlspecialchars($row[0]) . "</td>";
