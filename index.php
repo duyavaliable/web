@@ -72,7 +72,7 @@
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='4'>Không thể mở tệp CSV</td></tr>";
+                        echo "<tr><td colspan='4'>Can't open CSV</td></tr>";
                     }
                     ?>
                 </tbody>
