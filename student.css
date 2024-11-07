@@ -1,4 +1,4 @@
-/* student.css */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f2f5;
@@ -36,7 +36,7 @@ label {
   margin-bottom: 5px;
 }
 
-/*phan button them*/
+
 .add-button-link,.delete-button-link {
   margin: 0;
   text-decoration: none;
@@ -54,7 +54,7 @@ label {
   background-color: #005f6a;
 }
 
-/*cua phan the <h2> Danh sach sinh vien */
+
 .table-section {
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@ label {
   margin: 0; 
   font-size: 24px; 
 }
-/*phan cua class button-group*/
+
 .button-group {
   display: flex;
   gap: 10px;
