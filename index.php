@@ -66,7 +66,7 @@
                             echo "<form method='POST' action='delete_student.php'>";
                             echo "<input type='hidden' name='action' value='delete'>";
                             echo "<input type='hidden' name='deleteID' value='" . htmlspecialchars($row[0]) . "'>";
-                            echo "<button class='delete-button' type='submit'>Xóa</button>";
+                            echo "<button class='delete-button' type='submit'>Delete</button>";
                             echo "</form>";
                             echo "</td>";
                             echo "</tr>";
