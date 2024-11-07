@@ -1,7 +1,6 @@
 <?php
 $filename = 'studentlist.csv';
 
-// Tạo file CSV nếu chưa tồn tại
 if (!file_exists($filename)) {
     $header = ["studentID", "name", "gender", "birth_date"];
     $file = fopen($filename, 'w');
@@ -9,12 +8,12 @@ if (!file_exists($filename)) {
     fclose($file);
 }
 
-// Hàm kiểm tra ID duy nhất
+
 function isUniqueID($studentID)
 {
     global $filename;
     if (($handle = fopen($filename, "r")) !== FALSE) {
-        fgetcsv($handle, 1000, ","); // Bỏ tiêu đề
+        fgetcsv($handle, 1000, ","); 
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
             if ($data[0] === $studentID) {
                 fclose($handle);
@@ -26,7 +25,6 @@ function isUniqueID($studentID)
     return true;
 }
 
-// Hàm thêm sinh viên mới
 function addStudent($data)
 {
     global $filename;
@@ -35,7 +33,7 @@ function addStudent($data)
     fclose($file);
 }
 
-// Hàm xóa sinh viên
+
 function deleteStudent($studentID)
 {
     global $filename;
@@ -46,7 +44,7 @@ function deleteStudent($studentID)
         return $row[0] !== $studentID;
     });
 
-    // Sắp xếp mảng theo studentID tăng dần
+    
     usort($updatedRows, function ($a, $b) {
         return $a[0] <=> $b[0];
     });
